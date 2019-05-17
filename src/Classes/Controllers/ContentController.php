@@ -16,8 +16,14 @@ class ContentController
     {
         
         $datas = $this->container->get('contentModel');
+       
         
-        $args['content'] = $datas->testContent();
+        //$args['content'] = $datas->testContent();
+        
+        $db = $this->container->get('db');
+        
+        $args['content'] = $datas->getContent($db);
+        
         
         // get the template renderer and pass response and datas to the template file.
         return $this->container->get('renderer')->render($response, 'content.php', $args);

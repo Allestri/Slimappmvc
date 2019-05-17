@@ -10,8 +10,7 @@
     <body>
         <h1>Slim</h1>
         <div>a microframework for PHP</div>
-
-            <h2><?= htmlspecialchars($content)?></h2>
+            <h2><?= htmlspecialchars($content['content'])?></h2>
             <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
     </body>
 </html>

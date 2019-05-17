@@ -4,11 +4,13 @@ namespace App\Models;
 
 class Model 
 {
-    
+    // Passes the DIC to get db later.
+    /*
     function __construct($container)
     {
         $this->container = $container;
     }
+    */
     
     
     protected function executeQuery($sql, $params = null) {

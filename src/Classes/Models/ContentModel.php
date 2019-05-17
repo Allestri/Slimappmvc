@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-Class ContentModel extends Model
+Class ContentModel
 {
     
     public function testContent()
@@ -11,11 +11,12 @@ Class ContentModel extends Model
         return $testDatas;
     }
     
-    public function getContent()
+    public function getContent($db)
     {
-        $sql = 'SELECT * FROM posts';
-        $posts = $this->executeQuery($sql);
-        return $posts;
+        $sql = 'SELECT content FROM posts WHERE id = 1';
+        $posts = $db->query($sql);
+        var_dump($posts);
+        return $posts->fetch();
     }
     
 
